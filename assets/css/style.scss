@@ -1,0 +1,17 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+}
+
+header h1, header h2 {
+  margin-left: 150px;
+}
