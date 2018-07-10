@@ -1,5 +1,6 @@
 ---
+layout: post
 title: Hello World!
+author: Xed89
 ---
-# {{ page.title }}
 Here we are, it seems like we have a blog now.
