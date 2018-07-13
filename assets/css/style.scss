@@ -3,6 +3,8 @@
 
 @import "{{ site.theme }}";
 
+$break-small: 405px;
+
 .logo {
   position: absolute;
   left: 0;
@@ -12,8 +14,14 @@
   display: inline-block;
 }
 
-header h1, header h2 {
+.header-title {
   margin-left: 150px;
+}
+
+header h2 {
+  @media screen and (max-width: $break-small) {
+    font-size: 1em;
+  }
 }
 
 #main-content p {
