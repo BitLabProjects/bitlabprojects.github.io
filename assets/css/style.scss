@@ -14,11 +14,29 @@ $break-small: 405px;
   display: inline-block;
 }
 
+header .inner {
+  height: 128px;
+  @media only screen and (max-width: 767px) {
+    height: 150px;
+  }
+}
+
+header a.button {
+  @media only screen and (max-width: 767px) {
+    position: absolute;
+    top: unset;
+    right: unset;
+    bottom: 0px;
+    margin: 0px;
+  }
+}
+
 .header-title {
   margin-left: 150px;
 }
 
 header h2 {
+  white-space: nowrap; //Disable wrapping on white spaces, the tag line contains <wbr> where needed
   @media screen and (max-width: $break-small) {
     font-size: 1em;
   }
