@@ -1,0 +1,5 @@
+baseURL = 'https://bitlabprojects.github.io/'
+languageCode = 'en-us'
+title = 'bitLabProjects'
+theme = "BitLabTheme"
+disablePathToLower = true

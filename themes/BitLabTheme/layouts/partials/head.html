@@ -1,0 +1,22 @@
+<head>
+    <meta charset="utf-8">
+
+    <!-- permette di utilizzare il motore di rendering più recente anche nel controllo WebBrowser -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- necessario per rendere la pagina responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="{{.Site.BaseURL}}favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> {{/*
+    <script src="{{.Site.BaseURL}}js/jquery-3.3.1.min.js" type="text/javascript"></script> */}}
+    <script src="{{.Site.BaseURL}}js/bundle.js" type="text/javascript"></script>
+
+    <script src="https://kit.fontawesome.com/b6577be800.js" crossorigin="anonymous"></script>
+
+    {{ $title := print .Site.Title " | " .Title }} {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+</head>

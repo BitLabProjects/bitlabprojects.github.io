@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+{{- partial "head.html" . -}}
+
+<body>
+    {{- partial "header.html" . -}} 
+    
+    <div id="content-wrapper">
+        <div class="inner clearfix">
+          <section id="main-content">
+            {{- block "main" . }} {{- end }}
+          </section>
+      
+          <aside id="sidebar">
+            {{- partial "menubar.html" . -}}
+          </aside>
+        </div>
+      </div>
+      
+     {{- partial "footer.html" . -}}
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="main-grid">
+    <div class="main-grid-center main-grid-content">
+        <div>
+          <h1 class="page-title">{{.Title}}</h1>
+          <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+          {{.Content}}
+
+          <div class="category-card-list">
+            {{ range sort .Site.Taxonomies.categories ".Page.Weight" }}
+              <a href="{{.Page.Permalink}}">
+                <div class="category-card">
+                    <div class="category-card-content">
+                        {{ with .Page.Params.preview_image }}<img src="{{ . }}">{{ end }}
+                        <span class="title">{{ .Page.Title }}</span>
+                    </div>
+                </div>
+              </a>
+            {{ end }}
+            <!--
+              <script src="/js/splide.min.js"></script>
+              <link rel="stylesheet" href="/css/splide.min.css">
+              <section class="splide" aria-labelledby="carousel-heading">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    {{ range sort .Site.Taxonomies.categories ".Page.Weight" }}
+                      <li class="splide__slide">
+                        <a href="{{.Page.Permalink}}">
+                            <div class="category-card">
+                                <div class="category-card-content">
+                                    {{ with .Page.Params.preview_image }}<img src="{{ . }}">{{ end }}
+                                    <span class="title">{{ .Page.Title }}</span>
+                                </div>
+                            </div>
+                        </a>
+                      </li>
+                    {{ end }}
+                  </ul>
+                </div>
+              </section>
+              <script>
+                new Splide( '.splide' ).mount();
+              </script>
+            -->
+            </div>
+
+            <h1>Ultimi post</h1><br/>
+            {{ with .Site.GetPage "/blog" }}
+              {{ range first 5 .Pages }}
+                <a href="{{.Permalink}}" class="blog-list-post">
+                  {{ with .Params.preview_image }}<img src="{{ . }}">{{ end }}
+                  <span class="title">{{.Title}}</span>
+                  <span class="post-info">pubblicato il {{.Date.Format "2006-01-02"}} da {{ with .Params.author }}{{ . }}{{ end }}{{ with .Params.tempo_lettura }} - lettura: {{ . }} min{{ end }}</span>
+                </a>
+              {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
