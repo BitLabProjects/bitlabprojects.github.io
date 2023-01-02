@@ -560,9 +560,18 @@ header h2 {
     border-top: solid 1px #fff
 }
 
+.livedemo img {
+    margin-right: 20px;
+    float: left;
+    max-width: 170px;
+    max-height: 170px;
+}
+
 #main-content {
     float: left;
-    width: 690px
+    width: 690px;
+    display: flex;
+    flex-direction: column;
 }
 
 #main-content img {
